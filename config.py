@@ -22,6 +22,31 @@ class Config:
         'tree_method': 'hist',
         'device': 'cuda' if torch.cuda.is_available() else 'cpu'
     }
+    # GCS Configuration - ADD THESE
+    GCS_BUCKET_NAME = "your-ml-models-bucket"  # Replace with your actual bucket name
+    GCS_PROJECT_ID = "your-gcp-project-id"    # Replace with your GCP project ID (optional)
+    
+    # GCS Path Prefixes
+    GCS_LSTM_MODEL_PREFIX = "models/lstm"
+    GCS_XGBOOST_MODEL_PREFIX = "models/xgboost" 
+    GCS_SCALER_PREFIX = "models/scalers"
+    
+    # Model Retention Policy (optional)
+    MAX_MODELS_PER_TICKER = 5  # Keep only the 5 most recent models per ticker
+    MODEL_CLEANUP_ENABLED = True  # Enable automatic cleanup of old models
+
+    # GCS Configuration - ADD THESE
+    GCS_BUCKET_NAME = "your-ml-models-bucket"  # Replace with your actual bucket name
+    GCS_PROJECT_ID = "your-gcp-project-id"    # Replace with your GCP project ID (optional)
+    
+    # GCS Path Prefixes
+    GCS_LSTM_MODEL_PREFIX = "models/lstm"
+    GCS_XGBOOST_MODEL_PREFIX = "models/xgboost" 
+    GCS_SCALER_PREFIX = "models/scalers"
+    
+    # Model Retention Policy (optional)
+    MAX_MODELS_PER_TICKER = 5  # Keep only the 5 most recent models per ticker
+    MODEL_CLEANUP_ENABLED = True  # Enable automatic cleanup of old models
     DATA_WINDOW_SIZE = 75
     DATA_PREDICTION_LENGTH = 30
     CONSOLIDATION_BB_WINDOW = 20
